@@ -1,0 +1,22 @@
+#Python/conda cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints
+
+#data
+data/raw/
+data/processed/
+data/splits/
+
+#model checkpoints and logs
+models/checkpoints/
+logs/
+*.log
+
+#environment
+.env
+.mypy_cache/
+*.DS_Store
+
