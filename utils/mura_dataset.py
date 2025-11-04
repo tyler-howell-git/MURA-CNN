@@ -16,7 +16,7 @@ class MURADataset(Dataset):
 
         for i in range(len(self.data)):
             study_path, label_raw = self.data.iloc[i]
-            label = int(label_raw)  # Convert numeric label to Python int (0 or 1)
+            label = int(label_raw)  #convert label to int
 
             study_full_path = os.path.join(self.root_dir, study_path)
             image_paths = glob(os.path.join(study_full_path, "*.png"))
