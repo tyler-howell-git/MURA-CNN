@@ -48,7 +48,7 @@ from utils.transforms import get_train_transforms, get_val_transforms
 from torch.utils.data import DataLoader
 
 train_dataset = MURADataset(
-    csv_file="data/splits/train_labeled_studies_split.csv", #ensure using the correct modified split file
+    csv_file="data/splits/train_labeled_studies_split.csv", #ensure correct split csv
     transform=get_train_transforms(),
     root_dir="data/raw"
 )
