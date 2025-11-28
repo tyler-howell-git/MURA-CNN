@@ -22,14 +22,19 @@ This project uses the MURA dataset to classify musculoskeletal X-rays as normal 
 - Preview notebook: `notebooks/data_preprocessing.ipynb`
 - Train/Val/Test Split: use `scripts/split_train_val.py` to split csvs
 
-## Data Structure
+## Not Included
+- MURA dataset needs to downloaded from: https://stanfordaimi.azurewebsites.net/datasets/3e00d84b-d86e-4fed-b2a4-bfe3effd661b 
 
-- `data/raw/MURA-v1.1/`: Unzipped MURA dataset
-- `data/splits/`: CSVs with study paths and binary labels
-- Each study folder contains multiple `.png` images
+## Data Structure
+After MURA is downloaded set up the data structure as follows.
+- Create a folder named `raw` under the data directory so that `data/raw/MURA-v1.1/`: Unzipped MURA dataset
+- Then cut `train_labeled_studies.csv` & `valid_labeled_studies.csv` from the `MURA-v1.1` folder
+- Create `data/splits/` folder
+- And paste the csvs in that directory so that: `data/splits/`: CSVs with study paths and binary labels
+- Each study folder in the dataset contains multiple `.png` images
 
 ## Splits
-
+**After data structure is set up run `scripts/split_train_val.py` once on your machine**
 - Split is defined per study (not per image)
 - Labels are at the study level, applied to all images in that folder
 
@@ -39,6 +44,15 @@ This project uses the MURA dataset to classify musculoskeletal X-rays as normal 
   - `val_labeled_studies_split.csv` (20%) — used for validation
 - The original `valid_labeled_studies.csv` is used as the **test set**
 - Stratified split preserves class balance
+
+## Baseline CNN
+- Baseline CNN implementation: [model_train_eval_example.ipynb](model_train_eval_example.ipynb)
+
+## Deeper CNN
+- Deeper CNN implementation: [model_1.ipynb](models/model_1.ipynb)
+
+## Evaluation & Comparison:
+- Implementation
 
 ## Usage
 
